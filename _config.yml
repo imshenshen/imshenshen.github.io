@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
+title: ShenShen's Blog
+subtitle: 三流前端工程师
+description: 神神的博客，专注分享个人学习经历
+author: ShenShen
 language:
 timezone:
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: huxblog
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
