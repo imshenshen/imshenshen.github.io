@@ -2,6 +2,8 @@
 title: FirstPost
 subtitle: Hello world
 date: 2016-06-01 23:39:02
+header-img: "post-bg.jpg"
+header-img-color: 1
 tags:
     - 随笔
 ---
