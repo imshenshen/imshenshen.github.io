@@ -73,3 +73,6 @@ deploy:
   branch : master
   name : shenshen
   email : im.shenshen@qq.com
+#comment
+duoshuo_username : blog-imshenshen
+duoshuo_share : true
