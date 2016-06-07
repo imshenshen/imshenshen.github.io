@@ -1,3 +1,10 @@
+# Site settings
+SEOTitle: 神神的博客 | ShenShen's Blog
+header-img: img/home-bg.jpg
+email: im.shenshen@qq.com
+description: "专注分享个人学习经验"
+keyword: "javascript,blog,front-end"
+
 # SNS settings
 # RSS: false
 github_username : imshenshen
@@ -15,6 +22,8 @@ sidebar-avatar: img/avatar.jpg      # use absolute URL, seeing it's used in both
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
 
 # Friends
 #friends: [
