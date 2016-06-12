@@ -1,0 +1,32 @@
+lanage : node_js
+node_js:
+    - "6"
+branches:
+  only:
+  - hexo
+
+before_install:
+    - npm install -g hexo
+
+install:
+    - npm install
+
+before_script:
+- git config --global user.name 'shenshen'
+- git config --global user.email 'im.shenshen@qq.com'
+
+script:
+- hexo generate
+
+after_success:
+- mkdir .deploy
+- cd .deploy
+- git clone --depth 1 --branch master --single-branch $DEPLOY_REPO .
+- rm -rf ./*
+- cp -r ../public/* .
+- cp -r ../CNAME .
+- cp -r ../favicon.png .
+- cp -r ../robots.txt .
+- git add -A .
+- git commit -m 'Site updated'
+- git push -q -u origin master
