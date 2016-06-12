@@ -67,12 +67,8 @@ theme: huxblog
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:imshenshen/imshenshen.github.io.git
-  branch : master
-  name : shenshen
-  email : im.shenshen@qq.com
+#deploy:
+
 #comment
 duoshuo_username : blog-imshenshen
 duoshuo_share : true
