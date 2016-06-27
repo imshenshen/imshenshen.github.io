@@ -13,11 +13,11 @@
 
     <title>
         
-          tags - 神神的博客 | ShenShen&#39;s Blog
+          yo脚手架的生成器 - 神神的博客 | ShenShen&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://blog.imshenshen.com/tags/">
+    <link rel="canonical" href="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -131,131 +131,172 @@
 
     <!-- Main Content -->
     
-<!-- Page Header -->
-<header class="intro-header  " style="background-image: url('/undefined')">
+<!-- Image to hack wechat -->
+<!-- <img src="http://blog.imshenshen.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('post-bg.jpg')
+    }
+</style>
+<header class="intro-header  " >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>tags</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">简单想，简单做，工作不是生活的全部！</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#工程化" title="工程化">工程化</a>
+                        
+                    </div>
+                    <h1>yo脚手架的生成器</h1>
+                    
+                    <h2 class="subheading">一键生成Angular+bootstrap的带主题的admin后台项目</h2>
+                    
+                    <span class="meta">
+                        Posted by ShenShen on
+                        2016-06-27
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
-                
-                    <a href="#javascript" title="javascript" rel="1">javascript</a>
-                
-                    <a href="#browser" title="browser" rel="0">browser</a>
-                
-                    <a href="#随笔" title="随笔" rel="1">随笔</a>
-                
-                    <a href="#工程化" title="工程化" rel="1">工程化</a>
-                
-            </div>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-            <!-- 标签列表 -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="javascript">
-                    <span class="tag-text">javascript</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/06/27/generator-angular-admin/">
-                        <h2 class="post-title">
-                            yo脚手架的生成器
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                一键生成Angular+bootstrap的带主题的admin后台项目
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="browser">
-                    <span class="tag-text">browser</span>
-                </span>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="随笔">
-                    <span class="tag-text">随笔</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/06/01/firstPost/">
-                        <h2 class="post-title">
-                            FirstPost
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                Hello world
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="工程化">
-                    <span class="tag-text">工程化</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/06/27/generator-angular-admin/">
-                        <h2 class="post-title">
-                            yo脚手架的生成器
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                一键生成Angular+bootstrap的带主题的admin后台项目
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
+                <p>Angular群众基础还是很高的，在admin后台的场景下使用angular真是省时省力，所以做了一个绞脚手架工具，用来一键生成项目文件。</p>
+<p>大概的页面是酱式儿的：<br><img src="admin.png" alt="pic"><br><img src="admin2.png" alt="pic"></p>
+<p>目前最终生成的项目所用的工具包括<code>webpack</code>,<code>gulp</code>,<code>font-awsome</code>,<code>ui-bootstrap</code>等，<br>已经是个可用的东西了，不过还有好多<strong>需要加上</strong>的功能：</p>
+<ul>
+<li>ES6/Coffeescript支持</li>
+<li>路由的Controller支持按需加载</li>
+<li>加入directive/provider…等等模板（现在只有Controller - -！）</li>
+</ul>
+<p>比较简单，没有publish到npm，使用方法在<a href="https://github.com/imshenshen/generator-angular-admin#usage" target="_blank" rel="external">这里</a>，后续慢慢完善吧，话说Angular2发布之后<br>还要支持<code>Typescript</code>，呃。。。</p>
 
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/06/27/generator-angular-admin/"
+                    data-title="yo脚手架的生成器"
+                    data-url="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/"
+                    data-images="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/post-bg.jpg"
+                    data-content="Angular群众基础还是很高的，在admin后台的场景下使用angular真是省时省力，所以... | undefined " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/06/01/firstPost/" data-toggle="tooltip" data-placement="top" title="FirstPost">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/06/27/generator-angular-admin/"
+                        data-title="yo脚手架的生成器"
+                        data-url="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#工程化" title="工程化">工程化</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
 
         </div>
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'blog-imshenshen';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
 
 
     <!-- Footer -->
