@@ -63,11 +63,14 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: huxblog
+theme: hexo-theme-hux
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 #deploy:
+
+ga_track_id : UA-80013219-1
+ga_domain : blog.imshenshen.com
 
 #comment
 duoshuo_username : blog-imshenshen
