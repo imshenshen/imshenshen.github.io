@@ -12,6 +12,7 @@ install:
     - npm install
     - cd themes
     - git clone https://github.com/imshenshen/imshenshen.github.io.git
+    - cd .. && pwd
 
 before_script:
 - git config --global user.name 'shenshen'
@@ -21,7 +22,7 @@ script:
 - hexo generate
 
 after_success:
-- mkdir .deploy
+- mkdir .deploy && pwd
 - cd .deploy
 - git clone --depth 1 --branch master --single-branch $DEPLOY_REPO . || (git init && git remote add -t master origin $DEPLOY_REPO)
 - rm -rf ./*
