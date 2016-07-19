@@ -13,11 +13,11 @@
 
     <title>
         
-          yo脚手架的生成器 - 神神的博客 | ShenShen&#39;s Blog
+          JSON2SM - 神神的博客 | ShenShen&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/">
+    <link rel="canonical" href="http://blog.imshenshen.com/2016/07/19/json2sm/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -154,14 +154,16 @@
                         
                           <a class="tag" href="/tags/#tools" title="tools">tools</a>
                         
+                          <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+                        
                     </div>
-                    <h1>yo脚手架的生成器</h1>
+                    <h1>JSON2SM</h1>
                     
-                    <h2 class="subheading">一键生成Angular+bootstrap的带主题的admin后台项目</h2>
+                    <h2 class="subheading">写json，生成可返回假数据的api以及api文档</h2>
                     
                     <span class="meta">
                         Posted by ShenShen on
-                        2016-06-27
+                        2016-07-19
                     </span>
                 </div>
             </div>
@@ -180,15 +182,28 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>Angular群众基础还是很高的，在admin后台的场景下使用angular真是省时省力，所以做了一个绞脚手架工具，用来一键生成项目文件。</p>
-<p>大概的页面是酱式儿的：<br><img src="admin.png" alt="pic"><br><img src="admin2.png" alt="pic"></p>
-<p>目前最终生成的项目所用的工具包括<code>webpack</code>,<code>gulp</code>,<code>font-awsome</code>,<code>ui-bootstrap</code>等，<br>已经是个可用的东西了，不过还有好多<strong>需要加上</strong>的功能：</p>
+                <h2 id="JSON2SM"><a href="#JSON2SM" class="headerlink" title="JSON2SM"></a><a href="https://github.com/imshenshen/json2SM" target="_blank" rel="external">JSON2SM</a></h2><p><a href="https://github.com/imshenshen/json2SM" target="_blank" rel="external">https://github.com/imshenshen/json2SM</a></p>
+<h2 id="做它嘎哈"><a href="#做它嘎哈" class="headerlink" title="做它嘎哈"></a>做它嘎哈</h2><p>在做项目，尤其是新项目开发时，通常接口甚至字段还没有定义。 前端同学通常需要等接口文档出来后才能开始大部分功能的开发。此工具想 尽量解决这一问题。为了不引入新的痛点，工具力图简单，快速，方便。 社区已经出现了一些相关工具，但是我的需求还不能得到很好的满足，所以 开始造，存在即合理。</p>
+<h2 id="这是什么"><a href="#这是什么" class="headerlink" title="这是什么"></a>这是什么</h2><p>这是一个可以通过编写描述文件，自动生成一个<code>APIServer</code>以及自动生成对应 的接口文档的工具。前端同学可以在开发初期使用server返回的假数据开发 部分功能。前后端同学统一维护一组描述文件，实现接口设计变动后，假数据 自动变更，接口文档自动更新。 </p>
+<p>为了保证工具简单、快速，设定如下：</p>
 <ul>
-<li>ES6/Coffeescript支持</li>
-<li>路由的Controller支持按需加载</li>
-<li>加入directive/provider…等等模板（现在只有Controller - -！）</li>
+<li>对于APIserver返回的假数据，接口之间不做数据关联，比如保存的接口<code>name</code>为<code>testName</code>，取数据的接口<code>name</code>字段为任意假数据，跟保存接口无关</li>
+<li>可以使用ymal文件进行描述，默认值等，能少写东西就少写- -！</li>
 </ul>
-<p>比较简单，没有publish到npm，使用方法在<a href="https://github.com/imshenshen/generator-angular-admin#usage" target="_blank" rel="external">这里</a>，后续慢慢完善吧，话说Angular2发布之后<br>还要支持<code>Typescript</code>，呃。。。</p>
+<h2 id="情景描述"><a href="#情景描述" class="headerlink" title="情景描述"></a>情景描述</h2><p>有一个接口需要获取用户信息，可以写如下描述文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">route : get,/api/user/info</div><div class="line"><span class="attr">doc:</span></div><div class="line"><span class="attr">    type:</span> markdown</div><div class="line"><span class="attr">    path:</span> userInfo/user.md</div><div class="line"><span class="attr">    title:</span> 客户信息</div><div class="line"><span class="attr">params:</span></div><div class="line"><span class="attr">    userId:</span></div><div class="line"><span class="attr">        necessary:</span> <span class="literal">true</span></div><div class="line">        desc : 用户ID</div><div class="line"><span class="attr">result:</span></div><div class="line"><span class="attr">    type:</span> object</div><div class="line"><span class="attr">    properties:</span></div><div class="line"><span class="attr">        code:</span> <span class="number">200</span></div><div class="line"><span class="attr">        data:</span></div><div class="line"><span class="attr">            type:</span> object</div><div class="line"><span class="attr">            properties:</span></div><div class="line"><span class="attr">                pkidStr:</span></div><div class="line"><span class="attr">                realName:</span></div><div class="line"><span class="attr">                    desc:</span> 姓名</div><div class="line"><span class="attr">                    faker:</span> name.findName</div><div class="line"><span class="attr">                sex:</span></div><div class="line"><span class="attr">                    type:</span> integer</div><div class="line"><span class="attr">                    desc:</span> <span class="string">'性别 0保密 1男 2女'</span></div><div class="line"><span class="attr">                    pattern:</span> <span class="type">!!js</span>/regexp /[<span class="number">0</span><span class="bullet">-2</span>]/</div><div class="line"><span class="attr">                email:</span></div><div class="line"><span class="attr">                    desc:</span> Email</div><div class="line"><span class="attr">                    faker:</span> internet.email</div><div class="line"><span class="attr">                qq:</span></div><div class="line"><span class="attr">                    pattern:</span> <span class="type">!!js</span>/regexp /[<span class="number">1</span><span class="bullet">-9</span>]&#123;<span class="number">6</span>,<span class="number">9</span>&#125;/</div><div class="line"><span class="attr">                isVip:</span></div><div class="line"><span class="attr">                    type:</span> integer</div><div class="line"><span class="attr">                    pattern:</span> <span class="string">"(1|0)"</span></div><div class="line"><span class="attr">                    desc:</span> 是否是会员</div><div class="line"><span class="attr">                files:</span></div><div class="line"><span class="attr">                    desc:</span> 用户名片</div><div class="line"><span class="attr">                    type:</span> array</div><div class="line"><span class="attr">                    minItems:</span> <span class="number">0</span></div><div class="line"><span class="attr">                    maxItems:</span> <span class="number">3</span></div><div class="line"><span class="attr">                    items:</span></div><div class="line"><span class="attr">                        type:</span> object</div><div class="line"><span class="attr">                        properties:</span></div><div class="line"><span class="attr">                            name:</span></div><div class="line"><span class="attr">                                desc:</span> 文件名</div><div class="line"><span class="attr">                                faker:</span> lorem.word</div><div class="line"><span class="attr">                            url:</span></div><div class="line"><span class="attr">                                faker:</span> image.imageUrl</div></pre></td></tr></table></figure>
+<p>使用<code>json2sm -s -p 8877</code>可生成server，请求<code>http://localhost:8877/api/user/info</code>，返回如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">code: 200,</div><div class="line">data: &#123;</div><div class="line">	pkidStr: "no data",</div><div class="line">	realName: "魏 建辉",</div><div class="line">	email: "_57@gmail.com",</div><div class="line">	qq: "3953858",</div><div class="line">	files: [&#123;</div><div class="line">		name: "alias",</div><div class="line">		url: "http://lorempixel.com/640/480"</div><div class="line">	&#125;,</div><div class="line">	&#123;</div><div class="line">		name: "sit",</div><div class="line">		url: "http://lorempixel.com/640/480"</div><div class="line">	&#125;,</div><div class="line">	&#123;</div><div class="line">		name: "et",</div><div class="line">		url: "http://lorempixel.com/640/480"</div><div class="line">	&#125;]</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用<code>json2sm -o build</code>可生成接口文档到<code>build/userInfo/user.md</code>：<br><img src="userInfo-user.png" alt="pic"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>多个接口输入到1个markdown文档中</li>
+<li>支持<code>$include</code>,<code>$extends</code>模板等，参考<code>jade|pug</code><br>其他功能、语法、请参见<a href="https://github.com/imshenshen/json2SM" target="_blank" rel="external">项目说明</a></li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="https://github.com/Marak/Faker.js" target="_blank" rel="external">Faker</a></li>
+<li><a href="https://github.com/fent/randexp.js" target="_blank" rel="external">randexp</a></li>
+<li><a href="https://github.com/json-schema-faker/json-schema-faker" target="_blank" rel="external">json-schema-faker</a></li>
+</ol>
 
 
                 <hr>
@@ -198,11 +213,12 @@
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/06/27/generator-angular-admin/"
-                    data-title="yo脚手架的生成器"
-                    data-url="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/"
-                    data-images="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/post-bg.jpg"
-                    data-content="Angular群众基础还是很高的，在admin后台的场景下使用angular真是省时省力，所以... | undefined " >
+                    data-thread-key="2016/07/19/json2sm/"
+                    data-title="JSON2SM"
+                    data-url="http://blog.imshenshen.com/2016/07/19/json2sm/"
+                    data-images="http://blog.imshenshen.com/2016/07/19/json2sm/post-bg.jpg"
+                    data-content="JSON2SMhttps://github.com/imshenshen/json2SM
+做它... | undefined " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -220,13 +236,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/07/19/json2sm/" data-toggle="tooltip" data-placement="top" title="JSON2SM">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/06/01/firstPost/" data-toggle="tooltip" data-placement="top" title="FirstPost">Next Post &rarr;</a>
+                            <a href="/2016/06/27/generator-angular-admin/" data-toggle="tooltip" data-placement="top" title="yo脚手架的生成器">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -235,9 +247,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/06/27/generator-angular-admin/"
-                        data-title="yo脚手架的生成器"
-                        data-url="http://blog.imshenshen.com/2016/06/27/generator-angular-admin/" >
+                        data-thread-key="2016/07/19/json2sm/"
+                        data-title="JSON2SM"
+                        data-url="http://blog.imshenshen.com/2016/07/19/json2sm/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -268,6 +280,8 @@
                           <a class="tag" href="/tags/#工程化" title="工程化">工程化</a>
                         
                           <a class="tag" href="/tags/#tools" title="tools">tools</a>
+                        
+                          <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
                         
                     </div>
                 </section>
