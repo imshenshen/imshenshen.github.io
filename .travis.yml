@@ -30,6 +30,7 @@ after_success:
 - cp -r ../CNAME .
 - cp -r ../favicon.png .
 - cp -r ../robots.txt .
+- cp -r ../README.md .
 - git add -A .
 - git commit -m 'Site updated'
 - git branch -m master
